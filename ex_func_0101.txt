@@ -1,0 +1,56 @@
+def say_hello(word):
+    str1 = word.split()    		#разделение строки на слова и размещение в списке str1
+    result = []		   		#список с преобразованными словами
+    for w in str1:	   		#для всех слов в списке str1
+        if 'д' in w:       		#если символ 'д' есть в w...
+            result.append(w)		#то в список result добавляется w без изменений
+        else:				#иначе...	
+            result.append(w.upper())	#в список result добавляется w в верхнем регисте
+    print(" ".join(result))		#объединить содержимое result в строку, разделяя пробелом и напечатать
+
+say_hello("Локальные функци")         # вызов функции say_hello
+say_hello("Одни функции могут определяться внутри других функций")
+say_hello("!!!")
+
+
+
+
+
+
+
+
+def unique(lst):
+    result = []			#создаем список для хранения результата
+    for elem in lst:		#для каждого элемента (elem) из списка lst
+        if elem in result:	#если elem есть в списке result, то...
+            continue		#переходим к след элементу списка lst (пропускаем всеь код до конца тела цикла)
+        else:			#иначе
+            result.append(elem) #добавляем elem в список result
+    return result		#возвращаем список result в точку вызова функции
+
+mylist = [1, 1, 2, 1, 3, 2, 3]
+print(unique(mylist))
+
+
+
+
+
+def mask24(lst):
+    result = []
+    for elem in lst:
+        if elem[-2:] == '24':    #срез из 2-х последних символов
+            result.append(elem)
+        else:
+            continue
+    return result
+
+ip_list = ['192.168.0.5/24','172.16.10.56/25','192.168.1.12/24']
+print(ip_list)
+print('Список адресов с 24 маской')
+print(mask24(ip_list))
+
+
+
+
+
+
